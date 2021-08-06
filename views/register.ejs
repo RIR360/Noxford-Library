@@ -1,0 +1,68 @@
+<div class="container-fluid py-5">
+    <div class="container">
+        <form class="
+            m-auto p-4
+            col-sm-8
+            col-md-6
+            col-lg-4
+            shadow
+            rounded
+            " action="/register" method="post">
+            <h1 class="text-primary py-2">Register</h1>
+            <div class="form-group py-1">
+                <label for="fname">Full Name</label>
+                <input type="text" name="fname" class="form-control my-2" placeholder="Email"  required>
+            </div>
+            <div class="form-group py-1">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" class="form-control my-2" placeholder="Email" required>
+            </div>
+            <div class="form-group py-1">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control my-2" placeholder="Enter Password" required>
+            </div>
+            <div class="form-group py-1 mb-3">
+                <label for="confirm">Confirm Password</label>
+                <input type="password" id="confirm_pwd" name="confirm" class="form-control my-2" placeholder="Confirm Password" required disabled>
+                <span id="status"></span>
+            </div>
+            <div class="form-group text-center">
+                <p>By signing up you accept our <a href="#">Terms Of Use</a></p>
+                <button type="submit" id="submit" class="btn btn-primary fs-5 my-2" disabled>Register</button>
+                <p>Already have an account? <a href="/login">Login here</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    window.onload = () => {
+        // getting the elements
+        const pwd = document.querySelector("#password");
+        const confirm_pwd = document.querySelector("#confirm_pwd");
+        const status = document.querySelector("#status");
+        const submit = document.querySelector("#submit");
+        // enable confirm field upon password input
+        pwd.addEventListener("keyup", () => {
+            confirm_pwd.disabled = false;
+        });
+        // checking if password matched on keyup
+        [pwd, confirm_pwd].forEach(field => {
+            field.addEventListener("keyup", () => {
+                if (pwd.value == confirm_pwd.value && pwd.value) {
+                    status.innerHTML = "Match";
+                    status.style.color = "Green";
+                    submit.disabled = false;
+                } else if (!pwd.value || !confirm_pwd.value) {
+                    status.innerHTML = "";
+                    submit.disabled = true;
+                }
+                else {
+                    status.innerHTML = "Did Not Match";
+                    status.style.color = "Red";
+                    submit.disabled = true;
+                }
+            });
+        })
+    }
+</script>

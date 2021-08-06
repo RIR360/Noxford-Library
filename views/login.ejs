@@ -1,0 +1,27 @@
+<div class="container-fluid py-5">
+   <div class="container">
+      <form class="
+            m-auto p-4
+            col-sm-8
+            col-md-6
+            col-lg-4
+            shadow
+            rounded
+            " action="/login" method="post">
+         <h1 class="text-primary py-2">Log in</h1>
+         <div class="form-group pb-1">
+            <label for="email">Email Address</label>
+            <input type="email" name="email" class="form-control my-2" placeholder="Email" required>
+         </div>
+         <div class="form-group pb-1 mb-3">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control my-2" placeholder="Enter Password" required>
+         </div>
+         <div class="form-group text-center">
+            <p>Forgot your password? <a href="#">Reset Password</a></p>
+            <button type="submit" class="btn btn-primary fs-5 my-2">Login</button>
+            <p>Don't have account? <a href="/register">Register Now</a></p>
+         </div>
+      </form>
+   </div>
+</div>
