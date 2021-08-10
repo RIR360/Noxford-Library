@@ -1,5 +1,34 @@
-<div class="container-fluid">
+<div class="container-fluid py-5 py-sm-4 bg-light">
+    <div class="container pb-sm-3 text-primary">
+        <div class="m-auto">
+            <img src="" alt="">
+            <h1 class="display-2 mb-lg-6">Search what you read!</h1>
+            <form action="/search" method="GET">
+                <div class="input-group py-3">
+                    <div class="form-outline">
+                        <input type="search" id="search" class="form-control" placeholder="Search Books" />
+                    </div>
+                    <button type="button" class="btn btn-primary">Search</button>
+                </div>
+                <div class="form-group py-1">
+                    <label for="library" class="btn btn-outline-primary me-2">
+                        <input type="checkbox" name="library" id="library">
+                        In the Library
+                    </label>
+                    <label for="online" class="btn btn-outline-primary me-2">
+                        <input type="checkbox" name="online" id="online">
+                        Online
+                    </label>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container-fluid py-3">
     <div class="container">
-        <h1>Search page is here</h1>
+        <h2 class="py-3 text-secondary">Search Results:</h2>
+        <div>
+            No freaking books found.
+        </div> 
     </div>
 </div>

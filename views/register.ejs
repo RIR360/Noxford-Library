@@ -11,24 +11,27 @@
             <h1 class="text-primary py-2">Register</h1>
             <div class="form-group py-1">
                 <label for="fname">Full Name</label>
-                <input type="text" name="fname" class="form-control my-2" placeholder="Email"  required>
-            </div>
+                <input name="fname" type="text" class="form-control" aria-describedby="fnameHelp" placeholder="Enter your name" required>
+                <small id="fnameHelp" class="form-text text-muted">You don't have to put a real name.</small>
+             </div>
             <div class="form-group py-1">
                 <label for="email">Email Address</label>
-                <input type="email" name="email" class="form-control my-2" placeholder="Email" required>
-            </div>
-            <div class="form-group py-1">
+                <input name="email" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter Email" required>
+                <small id="emailHelp" class="form-text text-muted">You don't have to put a real email.</small>
+             </div>
+             <div class="form-group py-1">
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" class="form-control my-2" placeholder="Enter Password" required>
-            </div>
-            <div class="form-group py-1 mb-3">
+                <input id="password" name="password" type="password" class="form-control" aria-describedby="passHelp" placeholder="Enter Password" required>
+                <small id="passHelp" class="form-text text-muted">Make a strong password. You don't need it though.</small>
+             </div>
+             <div class="form-group py-1">
                 <label for="confirm">Confirm Password</label>
-                <input type="password" id="confirm_pwd" name="confirm" class="form-control my-2" placeholder="Confirm Password" required disabled>
-                <span id="status"></span>
-            </div>
-            <div class="form-group text-center">
+                <input id="confirm" name="confirm" type="password" class="form-control" aria-describedby="confirmHelp" placeholder="Confirm Password" required disabled>
+                <small id="confirmHelp" class="form-text"></small>
+             </div>
+            <div class="form-group text-center py-1">
                 <p>By signing up you accept our <a href="#">Terms Of Use</a></p>
-                <button type="submit" id="submit" class="btn btn-primary fs-5 my-2" disabled>Register</button>
+                <button type="submit" id="submit" class="btn btn-primary fs-5 mb-2" disabled>Register</button>
                 <p>Already have an account? <a href="/login">Login here</a></p>
             </div>
         </form>
@@ -39,8 +42,8 @@
     window.onload = () => {
         // getting the elements
         const pwd = document.querySelector("#password");
-        const confirm_pwd = document.querySelector("#confirm_pwd");
-        const status = document.querySelector("#status");
+        const confirm_pwd = document.querySelector("#confirm");
+        const status = document.querySelector("#confirmHelp");
         const submit = document.querySelector("#submit");
         // enable confirm field upon password input
         pwd.addEventListener("keyup", () => {
@@ -63,6 +66,6 @@
                     submit.disabled = true;
                 }
             });
-        })
+        });
     }
 </script>

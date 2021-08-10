@@ -1,5 +1,46 @@
-<div class="container-fluid">
+<div class="container-fluid py-5 py-sm-4 bg-light">
+    <div class="container pb-sm-3 text-primary">
+        <div class="row text-center">
+            <div class="col-md-7 m-auto">
+                <img src="" alt="">
+                <h1 class="display-2 mb-lg-3">Donate Now!</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid py-5">
     <div class="container">
-        <h1>Donate page is here</h1>
+        <div class="row">
+            <h2 class="py-3">Why donate to Noxford?</h2>
+            <p class="col-sm-6">We depend on support from generous individuals like you to help fund our collections, job search resources, access to the internet, and so much more. Your gift helps keep these vital services FREE for all New Yorkers.</p>
+        </div>
+        <form action="/donate" method="POST">
+            <h2 class="text-primary py-2">Please fill up this information:</h2>
+            <div class="form-group py-1">
+                <label for="amount">Amount</label>
+                <select class="form-control" name="amount" required>
+                    <option value="10">$10</option>
+                    <option value="50">$50</option>
+                    <option value="100">$100</option>
+                    <option value="250">$250</option>
+                    <option value="500">$500</option>
+                </select>
+             </div>
+             <div class="form-group py-1">
+                 <input type="checkbox" name="monthly" id="monthly">
+                <label for="monthly">Make this a monthly gift for steady support.</label>
+             </div>
+             <div class="form-group py-1">
+                <label for="amount">Donation Direction</label>
+                <select class="form-control" name="amount" required>
+                    <option value="1">Where it's needed the most</option>
+                    <option value="2">General Book Fund</option>
+                    <option value="3">Public Programs</option>
+                    <option value="4">Chilldren's Programs</option>
+                    <option value="5">Local Library</option>
+                </select>
+             </div>
+            <button type="submit" class="btn btn-outline-primary my-3">Donate</button>
+        </form>
     </div>
 </div>

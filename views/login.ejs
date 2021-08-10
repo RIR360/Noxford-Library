@@ -9,17 +9,18 @@
             rounded
             " action="/login" method="post">
          <h1 class="text-primary py-2">Log in</h1>
-         <div class="form-group pb-1">
+         <div class="form-group py-1">
             <label for="email">Email Address</label>
-            <input type="email" name="email" class="form-control my-2" placeholder="Email" required>
+            <input name="email" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter Email" required>
+            <small id="emailHelp" class="form-text text-muted">You don't have to put a real email.</small>
          </div>
-         <div class="form-group pb-1 mb-3">
+         <div class="form-group py-1">
             <label for="password">Password</label>
-            <input type="password" name="password" class="form-control my-2" placeholder="Enter Password" required>
+            <input name="password" type="password" class="form-control" placeholder="Enter Password" required>
          </div>
-         <div class="form-group text-center">
+         <div class="form-group text-center py-1">
             <p>Forgot your password? <a href="#">Reset Password</a></p>
-            <button type="submit" class="btn btn-primary fs-5 my-2">Login</button>
+            <button type="submit" class="btn btn-primary fs-5 mb-2">Login</button>
             <p>Don't have account? <a href="/register">Register Now</a></p>
          </div>
       </form>
