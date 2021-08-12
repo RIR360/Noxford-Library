@@ -1,14 +1,13 @@
 <div class="container-fluid py-5 py-sm-4 bg-light">
     <div class="container pb-sm-3 text-primary">
         <div class="m-auto">
-            <img src="" alt="">
             <h1 class="display-2 mb-lg-6">Search what you read!</h1>
-            <form action="/search" method="GET">
+            <form action="/search" method="POST">
                 <div class="input-group py-3">
-                    <div class="form-outline">
+                    <div class="form-outline w-75">
                         <input type="search" id="search" class="form-control" placeholder="Search Books" />
                     </div>
-                    <button type="button" class="btn btn-primary">Search</button>
+                    <button type="submit" class="btn btn-primary">Search</button>
                 </div>
                 <div class="form-group py-1">
                     <label for="library" class="btn btn-outline-primary me-2">
@@ -26,7 +25,7 @@
 </div>
 <div class="container-fluid py-3">
     <div class="container">
-        <h2 class="py-3 text-secondary">Search Results:</h2>
+        <h2 class="mb-3 text-secondary">Search Results:</h2>
         <div>
             No freaking books found.
         </div> 
