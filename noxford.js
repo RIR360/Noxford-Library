@@ -1,3 +1,5 @@
+// loading environment
+require('dotenv').config();
 // modules
 const express = require("express");
 const layouts = require("express-ejs-layouts");
@@ -8,7 +10,7 @@ const __registration__ = require("./routes/registration.js");
 
 // app
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000; 
 
 // app configurting
 app.set("view engine", "ejs");
@@ -42,7 +44,7 @@ app.get("/donate", (req, res) => {
 });
 // 404 Error Page
 app.get("*", (req, res) => {
-    res.render("notFound", {title: "404 Not Found"});
+    res.status(400).render("notFound", {title: "404 Not Found"});
 });
 
 // listening

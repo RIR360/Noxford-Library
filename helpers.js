@@ -10,7 +10,7 @@ function error(res, message) {
     if (!message) {
         message = "Something wen't wrong";
     }
-    res.render("error", {title: "Error", message: message});
+    res.status(400).render("error", {title: "Error", message: message});
 }
  
 module.exports = {
