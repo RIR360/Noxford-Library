@@ -12,6 +12,7 @@ function error(res, message) {
     }
     res.status(400).render("error", {title: "Error", message: message});
 }
+
  
 module.exports = {
     error, log

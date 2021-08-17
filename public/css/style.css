@@ -42,3 +42,11 @@ h1, h2, h3, h4, h5, h6, .btn {
 .card {
     width: 200px;
 }
+
+/* Dedicated custom classes */
+.profile img {
+    border: 2px solid transparent;
+}
+.profile img:hover {
+    border: 2px solid var(--bs-primary);
+}

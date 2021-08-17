@@ -20,7 +20,6 @@ app.post("/", async (req, res) => {
     const email = req.body.email;
     const pwd = req.body.password;
     const c_pwd = req.body.confirm;
-    // check if user already exists
     // connect to database
     await client.connect();
     // find the user
@@ -32,7 +31,11 @@ app.post("/", async (req, res) => {
     });
     // check for users
     if (result) {
-        Helper.error(res, "User already exists");
+        res.render("register", {
+            title:"Register Failed", 
+            flash: "Register failed: User already exists",
+            type: "danger"
+        });
     } else {
         // validation check
         if (!fname || !email || !pwd) {
@@ -68,8 +71,13 @@ app.post("/", async (req, res) => {
                 .db("Noxford-library")
                 .collection("users")
                 .insertOne(userData);
-                // go back to homepage
-                res.redirect("/");
+                // registration done
+                req.session.looged = true;
+                res.render("home", {
+                    title:"Home", 
+                    flash: "Registration Success",
+                    type: "success"
+                });
             } catch (err) {
                 Helper.error(res, err);
             } finally {

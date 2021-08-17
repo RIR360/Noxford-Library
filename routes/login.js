@@ -1,48 +1,57 @@
-const fsystem = require("fs");
+// loading environment
+require('dotenv').config();
+// modules
 const express = require("express");
 const app = express.Router();
 const bcrypt = require("bcrypt");
 const Helper = require("../helpers");
-// constants
-const DATABASE = "database.json";
-
+// mongodb
+const {MongoClient} = require("mongodb");
+const uri = process.env.DATABASE_URL
+const client = new MongoClient(uri);
+// get method
 app.get("/", (req, res) => {
     res.render("login", {title: "Login"});
 });
+// post method
 app.post("/", async (req, res) => {
     // get user credentials
     const email = req.body.email;
     const pwd = req.body.password;
-    // basic validation
-    if (!email || !pwd) {
-        Helper.error(res);
-    }
-    else {
-        // log the user in
-        // load up database
-        const database = JSON.parse(
-            fsystem.readFileSync(DATABASE)
-        );
-        var logger;
-        // check if user already exists
-        for (user of database)
-        {
-            if (user.email == email) {
-                logger = user;
-                break;
-            }
-        }
-        if (!logger) {
-            Helper.error(res, "User doesn't exists");
+    // connect to database
+    await client.connect();
+    // find the user
+    const result = await client
+    .db("Noxford-library")
+    .collection("users")
+    .findOne({
+        "email": email
+    });
+    // check for users
+    if (!result) {
+        res.render("login", {
+            title:"Login Failed", 
+            flash: "Login failed: User doesn't exists",
+            type: "danger"
+        });
+    } else {
+        // basic validation
+        if (!email || !pwd) {
+            Helper.error(res);
         }
         else {
             // user found
-            if (await bcrypt.compare(pwd, logger.hash))
+            if (await bcrypt.compare(pwd, result.hash))
             {
-                Helper.log(res, "Wow! you logged in");
+                req.session.logged = true;
+                res.redirect("/");
             }
             else {
-                res.redirect("/login");
+                res.render("login", {
+                    title:"Login Failed", 
+                    flash: "Login failed: Wrong Password",
+                    type: "danger"
+                });
             }
         }
     }

@@ -6,9 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/fav.ico" type="image/x-icon">
     <title>Noxford - <%- title %></title>
 </head>
 <body>
+
+    <!-- Flash Message -->
+    <% if (locals.flash) { %>
+        <div id="alert" class="alert alert-<%= type %> " role="alert">
+            <%= flash %>
+        </div>
+        <script>
+            const id = document.querySelector("#alert");
+            setTimeout(() => {
+                id.remove();
+            }, 5000);
+        </script>
+    <% } %>
 
     <!-- Navbar -->
     <%- include("partials/_nav.ejs") %>

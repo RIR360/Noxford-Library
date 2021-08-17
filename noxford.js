@@ -3,6 +3,7 @@ require('dotenv').config();
 // modules
 const express = require("express");
 const layouts = require("express-ejs-layouts");
+const session = require("express-session");
 // routers
 const __home__ = require("./routes/home.js");
 const __login__ = require("./routes/login.js");
@@ -17,6 +18,16 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(layouts);
 app.use(express.urlencoded({ limit: '10mb', extended: false }));
+app.use(session({
+    secret: "user login status",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {logged: false}
+}));
+app.use(function(req, res, next) {
+    res.locals.logged = req.session.logged;
+    next();
+});
 
 // ***** routing *****
 // homepage
@@ -36,6 +47,11 @@ app.get("/search", (req, res) => {
 });
 // login
 app.use("/login", __login__);
+// logout
+app.use("/logout", (req, res) => {
+    req.session.logged = false;
+    res.redirect("/");
+});
 // register
 app.use("/register", __registration__);
 // donate
