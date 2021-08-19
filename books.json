@@ -1,0 +1,16 @@
+[
+    {
+        "name": "The Golden Compass",
+        "author": "Philip Pullman", 
+        "des": "Lyra is rushing to the cold, far North, where witch clans and armored bears rule. North, where the Gobblers take the children they steal--including her friend Roger. North, where her fearsome uncle Asriel is trying to build a bridge to a parallel world.",
+        "pub": 1995,
+        "cover": "covers/the-golden-compass.jpg"
+    },
+    {
+        "name": "A Clash of Kings",
+        "author": "George R.R. Martin",
+        "des": "A comet the color of blood and flame cuts across the sky. Two great leaders—Lord Eddard Stark and Robert Baratheon—who hold sway over an age of enforced peace are dead, victims of royal treachery. Now, from the ancient citadel of Dragonstone to the forbidding shores of Winterfell, chaos reigns.",
+        "pub": 1998,
+        "cover": "covers/a-clash-kings.jpg"
+    }
+]

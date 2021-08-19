@@ -7,7 +7,20 @@ h1, h2, h3, h4, h5, h6, .btn {
     font-family: 'Times New Roman';
 }
 
-/* Common classes */
+/* Bootstrap overwrites */
+.nav-link {
+    border-bottom: 2px solid transparent;
+    transition: ease 0.2s;
+    margin: 0 5px;
+}
+.nav-link:hover {
+    border-bottom: 2px solid var(--bs-primary);
+}
+.nav-link:active {
+    background: var(--bs-light);
+}
+
+/* Custom classes */
 .smooth {
     transition: all ease 0.2s;
 }
@@ -21,32 +34,22 @@ h1, h2, h3, h4, h5, h6, .btn {
     list-style-type: none;
     color: inherit;
 }
-.header_bg {
-    background: url("../img/home-bg.jpg");
-    box-shadow:inset 0 0 0 2000px rgba(1, 29, 61, 0.4);
-}
-
-/* Navbar link effects */
-.nav-link {
-    border-bottom: 2px solid transparent;
-    transition: ease 0.2s;
-    margin: 0 5px;
-}
-.nav-link:hover {
-    border-bottom: 2px solid var(--bs-primary);
-}
-.nav-link:active {
-    background: var(--bs-light);
-}
-
-.card {
-    width: 200px;
-}
-
-/* Dedicated custom classes */
 .profile img {
     border: 2px solid transparent;
 }
 .profile img:hover {
     border: 2px solid var(--bs-primary);
+}.header_bg {
+    background: url("../img/home-bg.jpg");
+    box-shadow:inset 0 0 0 2000px rgba(1, 29, 61, 0.4);
+}
+.book_card {
+    display: inline-block;
+    width: 250px;
+    text-align: center;
+    margin: 10px 20px;
+}
+.book_card img:hover {
+    transform: translate(0, -20px);
+    box-shadow: 0 30px 10px rgba(1, 29, 61, 0.4);
 }

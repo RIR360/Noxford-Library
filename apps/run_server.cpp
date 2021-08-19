@@ -26,7 +26,7 @@ int main()
 
         system(file.c_str());
         system(del_file.c_str());
-        system("node app");
+        system("nodemon app");
     }
     return 0;
 }

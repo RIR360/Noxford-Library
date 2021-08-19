@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express.Router();
-
+// get dashboard
 app.get("/", (req, res) => {
     if (req.session.logged) {
         res.redirect("/dashboard");
@@ -8,7 +8,7 @@ app.get("/", (req, res) => {
         res.render("home", {title: "Home"});
     }
 });
-
+// get dashboard
 app.get("/dashboard", (req, res) => {
     if (req.session.logged) {
         res.render("dashboard", {title: "Dashboard"})

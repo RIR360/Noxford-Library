@@ -5,9 +5,10 @@ const express = require("express");
 const layouts = require("express-ejs-layouts");
 const session = require("express-session");
 // routers
-const __home__ = require("./routes/home.js");
-const __login__ = require("./routes/login.js");
-const __registration__ = require("./routes/registration.js");
+const _home_ = require("./routes/_home_.js");
+const _login_ = require("./routes/_login_.js");
+const _registration_ = require("./routes/_registration_.js");
+const _collection_ = require("./routes/_collection_.js");
 
 // app
 const app = express();
@@ -31,12 +32,10 @@ app.use(function(req, res, next) {
 
 // ***** routing *****
 // homepage
-app.use("/", __home__);
+app.use("/", _home_);
 
 // collection
-app.get("/collection", (req, res) => {
-    res.render("collection", {title: "Collection"});
-});
+app.use("/collection", _collection_);
 // getcard
 app.get("/getcard", (req, res) => {
     res.render("getcard", {title: "Get a card"});
@@ -46,14 +45,14 @@ app.get("/search", (req, res) => {
     res.render("search", {title: "Search"});
 });
 // login
-app.use("/login", __login__);
+app.use("/login", _login_);
 // logout
 app.use("/logout", (req, res) => {
     req.session.logged = false;
     res.redirect("/");
 });
 // register
-app.use("/register", __registration__);
+app.use("/register", _registration_);
 // donate
 app.get("/donate", (req, res) => {
     res.render("donate", {title: "Donate"});
