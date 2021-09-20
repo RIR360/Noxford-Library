@@ -14,6 +14,280 @@
         "cover": "covers/a-clash-kings.jpg"
     },
     {
+        "name": "Dune",
+        "author": "Frank Herbert",
+        "stars": 4.2,
+        "des": "Set in the far future amidst a sprawling feudal interstellar empire where planetary dynasties are controlled by noble houses that owe an allegiance to the imperial House Corrino, Dune tells the story of young Paul Atreides (the heir apparent to Duke Leto Atreides and heir of House Atreides) as he and his family accept control of the desert planet Arrakis, the only source of the 'spice' melange, the most important and valuable substance in the cosmos.",
+        "pub": 1965,
+        "cover": "covers/dune.jpg"
+    },
+    {
+        "name": "1984",
+        "author": "George Orwell, Erich Fromn",
+        "stars": 4.1,
+        "pub": 1949,
+        "cover": "covers/1984.jpg"
+    },
+    {
+        "name": "The Giver",
+        "author": "Lois Lowry",
+        "stars": 4.1,
+        "pub": 1993,
+        "cover": "covers/giver.jpg"
+    },
+    {
+        "name": "The Little Prince",
+        "author": "Antoine de Saint",
+        "stars": 4.3,
+        "pub": 1943,
+        "cover": "covers/the-little-prince.jpg"
+    },
+    {
+        "name": "Alice in the wonderland",
+        "author": "Lewis Carroll",
+        "stars": 4.0,
+        "pub": 1865,
+        "cover": "covers/alice-wonder.jpg"
+    },
+    {
+        "name": "City of Bones",
+        "author": "Casandra clare",
+        "stars": 4.1,
+        "pub": 2007,
+        "cover": "covers/city-bones.jpg"
+    },
+    {
+        "name": "The Colour of Magic",
+        "author": "Terry Pratchett",
+        "stars": 3.9,
+        "pub": 1983,
+        "cover": "covers/color-magic.jpg"
+    },
+    {
+        "name": "Gulliver's Travels",
+        "author": "Jonathon Swift",
+        "stars": 3.5,
+        "pub": 1726,
+        "cover": "covers/gulliver-travel.jpg"
+    },
+    {
+        "name": "Eragon",
+        "author": "Christopher Paolini",
+        "stars": 3.8,
+        "pub": 2002,
+        "cover": "covers/eragon.jpg"
+    },
+    {
+        "name": "Stardust",
+        "author": "Neil Gaiman",
+        "stars": 4.0,
+        "pub": 1998,
+        "cover": "covers/stardust.jpg"
+    },
+    {
+        "name": "Sabriel",
+        "author": "Garth Nix",
+        "stars": 4.1,
+        "pub": 1995,
+        "cover": "covers/sabriel.jpg"
+    },
+    {
+        "name": "The Princess Bride",
+        "author": "William Goldman",
+        "stars": 4.2,
+        "pub": 1973,
+        "cover": "covers/princess-bride.jpg"
+    },
+    {
+        "name": "Harry potter 6",
+        "author": "JK Rowling",
+        "stars": 4.5,
+        "pub": 2005,
+        "cover": "covers/harry-potter6.jpg"
+    },
+    {
+        "name": "The Host",
+        "author": "Stephenie Meyer",
+        "stars": 3.8,
+        "pub": 2008,
+        "cover": "covers/the-host.jpg"
+    },
+    {
+        "name": "Nueromancer",
+        "author": "William Gibson",
+        "stars": 3.8,
+        "pub": 1984,
+        "cover": "covers/nueromancer.jpg"
+    },
+    {
+        "name": "Written in Red",
+        "author": "Annie Bishop",
+        "stars": 4.2,
+        "pub": 2013,
+        "cover": "covers/written-red.jpg"
+    },
+    {
+        "name": "Graceling",
+        "author": "Kristin Cashore",
+        "stars": 4.0,
+        "pub": 2008,
+        "cover": "covers/graceling.jpg"
+    },
+    {
+        "name": "Redwall",
+        "author": "Brian Jacques",
+        "stars": 4.1,
+        "pub": 1986,
+        "cover": "covers/redwall.jpg"
+    },
+    {
+        "name": "Ship of magic",
+        "author": "Robin Hobb",
+        "stars": 4.1,
+        "pub": 1998,
+        "cover": "covers/ship-magin.jpg"
+    },
+    {
+        "name": "Pyramids",
+        "author": "Terry Pratchett",
+        "stars": 3.9,
+        "pub": 1989,
+        "cover": "covers/pyramids.jpg"
+    },
+    {
+        "name": "Snow Crash",
+        "author": "Neal Stephenson",
+        "stars": 4.0,
+        "pub": 1992,
+        "cover": "covers/snow-crash.jpg"
+    },
+    {
+        "name": "Coraline",
+        "author": "Neil Gaiman",
+        "stars": 4.0,
+        "pub": 2002,
+        "cover": "covers/coraline.jpg"
+    },
+    {
+        "name": "Assasin's Apprentice",
+        "author": "Robin Hobb",
+        "stars": 4.1,
+        "pub": 1995,
+        "cover": "covers/assansins.jpg"
+    },
+    {
+        "name": "Legacy",
+        "author": "Jeshikah Sudin",
+        "stars": 3.8,
+        "pub": 2014,
+        "cover": "covers/legacy.jpg"
+    },
+    {
+        "name": "Uglies",
+        "author": "Scott Westerfeld",
+        "stars": 3.8,
+        "pub": 2005,
+        "cover": "covers/uglies.jpg"
+    },
+    {
+        "name": "Logan's Run",
+        "author": "William F. Nolan",
+        "stars": 3.6,
+        "pub": 1967,
+        "cover": "covers/logan-run.jpg"
+    },
+    {
+        "name": "Peter Pan",
+        "author": "J.M. Barrie",
+        "stars": 4.0,
+        "pub": 1904,
+        "cover": "covers/peter-pan.jpg"
+    },
+    {
+        "name": "Dark Matter",
+        "author": "Blake Crouch",
+        "stars": 4.1,
+        "pub": 2016,
+        "cover": "covers/dark-matter.jpg"
+    },
+    {
+        "name": "Eclipse",
+        "author": "Stephenie Meyer",
+        "stars": 3.6,
+        "pub": 2007,
+        "cover": "covers/eclipse.jpg"
+    },
+    {
+        "name": "Hyperion",
+        "author": "Dan Simmons",
+        "stars": 4.2,
+        "pub": 1989,
+        "cover": "covers/hyperion.jpg"
+    },
+    {
+        "name": "The Dispossessed",
+        "author": "Ursula K. le Guin",
+        "stars": 4.2,
+        "pub": 1974,
+        "cover": "covers/the-dispossessed.jpg"
+    },
+    {
+        "name": "Obsidian",
+        "author": "Jennifer L. Armentrout",
+        "stars": 4.2,
+        "pub": 2011,
+        "cover": "covers/obsidian.jpg"
+    },
+    {
+        "name": "The Stand",
+        "author": "Stephen King",
+        "stars": 4.3,
+        "pub": 1978,
+        "cover": "covers/the-stand.jpg"
+    },
+    {
+        "name": "Tigana",
+        "author": "D. Rus",
+        "stars": 4.1,
+        "pub": 1990,
+        "cover": "covers/tigana.jpg"
+    },
+    {
+        "name": "Uprooted",
+        "author": "D. Rus",
+        "stars": 4.0,
+        "pub": 2015,
+        "cover": "covers/uprooted.jpg"
+    },
+    {
+        "name": "Kindred",
+        "author": "D. Rus",
+        "stars": 4.2,
+        "pub": 1979,
+        "cover": "covers/kindred.jpg"
+    },
+    {
+        "name": "Jurassic Park",
+        "author": "D. Rus",
+        "stars": 4.0,
+        "pub": 1990,
+        "cover": "covers/jurassic-park.jpg"
+    },
+    {
+        "name": "Conan",
+        "author": "Robert E. Howard",
+        "stars": 4.0,
+        "pub": 1932,
+        "cover": "covers/conan.jpg"
+    },
+    {
+        "name": "The Shining",
+        "author": "Stephen King",
+        "stars": 4.2,
+        "pub": 1977,
+        "cover": "covers/the-shining.jpg"
+    },
+    {
         "name": "Rizvy's Motivation",
         "author": "Rejwan Islam Rizvy",
         "des": "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
@@ -32,13 +306,6 @@
         "author": "Tabassum Moon",
         "des": "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
         "pub": 2008,
-        "cover": "covers/the-golden-compass.jpg"
-    },
-    {
-        "name": "Do not fear nothing",
-        "author": "Ayesha Afrin mimi",
-        "des": "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
-        "pub": 2010,
         "cover": "covers/the-golden-compass.jpg"
     }
 ]
