@@ -1,17 +1,19 @@
 <div class="container-fluid">
     <div class="container py-5">
         <h1 class="py-2">Best choices</h1>
-        <div class="d-block">
+        <div class="books_container row">
             <% for(let i = 0; i < data.length; i++) { %>
-            <div class="book_card">
-                <a href="#" class="text_none text-dark">
-                    <img class="smooth rounded img-fluid" src="<%= data[i].cover %>" alt="an image">
-                    <h2 class="text-primary mt-2"><%= data[i].name %></h2>
-                    <p>
-                        <small><%= data[i].author %></small>
-                        <small class="text-muted"><%= data[i].pub %></small>
-                    </p>
-                </a>
+            <div class="col-sm-6 col-md-4 col-lg-3 text-center text-sm-start">
+                <div class="book_card">
+                    <a href="#" class="text_none text-dark">
+                        <img class="smooth rounded img-fluid" src="<%= data[i].cover %>" alt="an image">
+                        <h2 class="text-primary mt-2"><%= data[i].name %></h2>
+                        <p>
+                            <small><%= data[i].author %></small>
+                            <small class="text-muted"><%= data[i].pub %></small>
+                        </p>
+                    </a>
+                </div>
             </div>
             <% } %>
         </div>

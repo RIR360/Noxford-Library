@@ -45,8 +45,7 @@ h1, h2, h3, h4, h5, h6, .btn {
 }
 .book_card {
     display: inline-block;
-    width: 250px;
-    text-align: center;
+    width: 200px;
     margin: 10px 20px;
 }
 .book_card img:hover {

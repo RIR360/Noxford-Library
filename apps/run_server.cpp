@@ -24,9 +24,9 @@ int main()
         temp.close();
         string del_file = "del /f " + file;
 
+        system("nodemon app");
         system(file.c_str());
         system(del_file.c_str());
-        system("nodemon app");
     }
     return 0;
 }
