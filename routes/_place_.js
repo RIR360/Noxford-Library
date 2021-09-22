@@ -8,7 +8,7 @@ app.get("/", (req, res) => {
         Helper.log(res, req.session.userId);
         
     } else {
-        res.render("login",  {
+        res.render("member/login",  {
             title:"Login", 
             flash: "Failed to place hold: Must be User",
             type: "danger"

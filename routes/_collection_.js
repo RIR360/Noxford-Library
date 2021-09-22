@@ -16,7 +16,7 @@ app.get("/", async (req, res) => {
             .collection("books")
             .find({}).toArray((err, result) => {
                 if (err) throw err;
-                res.render("collection", {title: "Collection", data: result});
+                res.render("pages/collection", {title: "Collection", data: result});
                 response.close();
             });
         });

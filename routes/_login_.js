@@ -11,7 +11,7 @@ const uri = process.env.DATABASE_URL
 const client = new MongoClient(uri);
 // get method
 app.get("/", (req, res) => {
-    res.render("login", {title: "Login"});
+    res.render("member/login", {title: "Login"});
 });
 // post method
 app.post("/", async (req, res) => {
@@ -29,7 +29,7 @@ app.post("/", async (req, res) => {
     });
     // check for users
     if (!result) {
-        res.render("login", {
+        res.render("member/login", {
             title:"Login Failed", 
             flash: "Login failed: User doesn't exists",
             type: "danger"
@@ -47,7 +47,7 @@ app.post("/", async (req, res) => {
                 res.redirect("/");
             }
             else {
-                res.render("login", {
+                res.render("member/login", {
                     title:"Login Failed", 
                     flash: "Login failed: Wrong Password",
                     type: "danger"

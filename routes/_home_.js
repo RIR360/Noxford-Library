@@ -5,13 +5,13 @@ app.get("/", (req, res) => {
     if (req.session.userId != null) {
         res.redirect("/dashboard");
     } else {
-        res.render("home", {title: "Home"});
+        res.render("pages/home", {title: "Home"});
     }
 });
 // get dashboard
 app.get("/dashboard", (req, res) => {
     if (req.session.userId != null) {
-        res.render("dashboard", {title: "Dashboard"})
+        res.render("member/dashboard", {title: "Dashboard"})
     } else {
         res.redirect("/login");
     }

@@ -45,11 +45,11 @@ app.use("/place", _place_);
 
 // getcard
 app.get("/getcard", (req, res) => {
-    res.render("getcard", {title: "Get a card"});
+    res.render("pages/getcard", {title: "Get a card"});
 });
 // search
 app.get("/search", (req, res) => {
-    res.render("search", {title: "Search"});
+    res.render("pages/search", {title: "Search"});
 });
 // login
 app.use("/login", _login_);
@@ -62,12 +62,21 @@ app.use("/logout", (req, res) => {
 app.use("/register", _registration_);
 // donate
 app.get("/donate", (req, res) => {
-    res.render("donate", {title: "Donate"});
+    res.render("pages/donate", {title: "Donate"});
+});
+// others page
+app.get("/others", (req, res) => {
+    res.render("pages/others", {title: "Others"});
+});
+// about page
+app.get("/about", (req, res) => {
+    res.render("pages/about", {title: "About"});
 });
 // 404 Error Page
 app.get("*", (req, res) => {
-    res.status(400).render("notFound", {title: "404 Not Found"});
+    res.status(400).render("misc/notFound", {title: "404 Not Found"});
 });
 
 // listening
 app.listen(port);
+console.log("Noxford Library Started Successfully!");

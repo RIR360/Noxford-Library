@@ -11,7 +11,7 @@ const uri = process.env.DATABASE_URL
 const client = new MongoClient(uri);
 // get method
 app.get("/", async (req, res) => {
-    res.render("register", {title: "Register"}); 
+    res.render("member/register", {title: "Register"}); 
 });
 // post method
 app.post("/", async (req, res) => {
@@ -31,7 +31,7 @@ app.post("/", async (req, res) => {
     });
     // check for users
     if (result) {
-        res.render("register", {
+        res.render("member/register", {
             title:"Register Failed", 
             flash: "Register failed: User already exists",
             type: "danger"
@@ -79,7 +79,7 @@ app.post("/", async (req, res) => {
                 .insertOne(userData);
                 // registration done
                 req.session.userId = "user" + idText;
-                res.render("home", {
+                res.render("pages/home", {
                     title:"Home", 
                     flash: "Registration Success",
                     type: "success"
