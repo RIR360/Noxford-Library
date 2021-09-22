@@ -11,6 +11,7 @@ const _registration_ = require("./routes/_registration_.js");
 const _collection_ = require("./routes/_collection_.js");
 const _books_ = require("./routes/_books_.js");
 const _place_ = require("./routes/_place_.js");
+const _account_ = require("./routes/_account_.js");
 
 // app
 const app = express();
@@ -51,6 +52,10 @@ app.get("/getcard", (req, res) => {
 app.get("/search", (req, res) => {
     res.render("pages/search", {title: "Search"});
 });
+
+// account page
+app.use("/account", _account_);
+
 // login
 app.use("/login", _login_);
 // logout
@@ -58,12 +63,14 @@ app.use("/logout", (req, res) => {
     req.session.userId = null;
     res.redirect("/");
 });
+
 // register
 app.use("/register", _registration_);
 // donate
 app.get("/donate", (req, res) => {
     res.render("pages/donate", {title: "Donate"});
 });
+
 // others page
 app.get("/others", (req, res) => {
     res.render("pages/others", {title: "Others"});
@@ -72,6 +79,7 @@ app.get("/others", (req, res) => {
 app.get("/about", (req, res) => {
     res.render("pages/about", {title: "About"});
 });
+
 // 404 Error Page
 app.get("*", (req, res) => {
     res.status(400).render("misc/notFound", {title: "404 Not Found"});
