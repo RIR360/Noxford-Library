@@ -9,6 +9,7 @@ const _home_ = require("./routes/_home_.js");
 const _login_ = require("./routes/_login_.js");
 const _registration_ = require("./routes/_registration_.js");
 const _collection_ = require("./routes/_collection_.js");
+const _books_ = require("./routes/_books_.js");
 
 // app
 const app = express();
@@ -36,6 +37,8 @@ app.use("/", _home_);
 
 // collection
 app.use("/collection", _collection_);
+// books page
+app.use("/books", _books_);
 // getcard
 app.get("/getcard", (req, res) => {
     res.render("getcard", {title: "Get a card"});

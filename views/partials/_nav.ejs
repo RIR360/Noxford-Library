@@ -9,7 +9,9 @@
         </button>
         <div class="collapse navbar-collapse smooth" id="navbarCollapse">
             <ul class="navbar-nav mb-2 mb-md-0 px-3 px-md-0">
-                <li class="nav-item"><a href="/" class="nav-link text-dark">Home</a></li>
+                <li class="nav-item"><a href="/" class="nav-link text-dark">
+                    <%= (logged == true) ? "Dashboard" : "Home" %>
+                </a></li>
                 <li class="nav-item"><a href="/collection" class="nav-link text-dark">Collection</a></li>
                 <li class="nav-item"><a href="/getcard" class="nav-link text-dark">Get a Card</a></li>
             </ul>

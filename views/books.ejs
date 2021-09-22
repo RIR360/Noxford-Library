@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-sm text-center mb-5 mb-sm-0 bg-light py-5">
+                <img src="<%= book.cover %>" alt="<%= book.name %>'s Cover Photo.">
+            </div>
+            <div class="col-sm-4 px-4">
+                <h1 class="py-2 fw-bold"><%= book.name %></h1>
+                <p>
+                    <strong>Author: </strong> <%= book.author %> <br/>
+                    <strong>Published: </strong> <%= book.pub %>
+                </p>
+                <p>
+                    <% if (book.des) { %>
+                        <%= book.des %>
+                    <% } else { %>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum, excepturi. Placeat quam praesentium est architecto ad, velit facere libero, consequuntur culpa quo facilis voluptatem illo, pariatur obcaecati eos eveniet amet.
+                    <% } %>
+                </p>
+                <p>
+                    <a href="/place?for=<%= book.name %>" class="btn btn-primary">Place Hold</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
