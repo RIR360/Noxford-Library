@@ -11,7 +11,7 @@ const uri = process.env.DATABASE_URL
 const client = new MongoClient(uri);
 // get method
 app.get("/", async (req, res) => {
-    res.render("register", {title: "Register"});
+    res.render("register", {title: "Register"}); 
 });
 // post method
 app.post("/", async (req, res) => {
@@ -22,7 +22,7 @@ app.post("/", async (req, res) => {
     const c_pwd = req.body.confirm;
     // connect to database
     await client.connect();
-    // find the user
+    // find the user 
     const result = await client
     .db("Noxford-library")
     .collection("users")
@@ -60,8 +60,14 @@ app.post("/", async (req, res) => {
                     req.body.password,
                     10
                 );
+                const stat = await client
+                    .db("Noxford-library")
+                    .collection("users")
+                    .stats();
+                let idText =  stat.count + 1;
                 // getting user data
                 const userData = {
+                    userId: "user" + idText,
                     fullname: req.body.fname,
                     email: req.body.email,
                     hash: await pass
@@ -72,7 +78,7 @@ app.post("/", async (req, res) => {
                 .collection("users")
                 .insertOne(userData);
                 // registration done
-                req.session.looged = true;
+                req.session.userId = "user" + idText;
                 res.render("home", {
                     title:"Home", 
                     flash: "Registration Success",

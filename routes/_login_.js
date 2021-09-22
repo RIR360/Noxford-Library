@@ -43,7 +43,7 @@ app.post("/", async (req, res) => {
             // user found
             if (await bcrypt.compare(pwd, result.hash))
             {
-                req.session.logged = true;
+                req.session.userId = result.userId;
                 res.redirect("/");
             }
             else {

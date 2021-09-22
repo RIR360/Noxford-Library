@@ -10,6 +10,7 @@ const _login_ = require("./routes/_login_.js");
 const _registration_ = require("./routes/_registration_.js");
 const _collection_ = require("./routes/_collection_.js");
 const _books_ = require("./routes/_books_.js");
+const _place_ = require("./routes/_place_.js");
 
 // app
 const app = express();
@@ -24,10 +25,10 @@ app.use(session({
     secret: "user login status",
     resave: false,
     saveUninitialized: false,
-    cookie: {logged: false}
+    cookie: {userId: null}
 }));
 app.use(function(req, res, next) {
-    res.locals.logged = req.session.logged;
+    res.locals.userId = req.session.userId;
     next();
 });
 
@@ -39,6 +40,9 @@ app.use("/", _home_);
 app.use("/collection", _collection_);
 // books page
 app.use("/books", _books_);
+// place hold page
+app.use("/place", _place_);
+
 // getcard
 app.get("/getcard", (req, res) => {
     res.render("getcard", {title: "Get a card"});
@@ -51,7 +55,7 @@ app.get("/search", (req, res) => {
 app.use("/login", _login_);
 // logout
 app.use("/logout", (req, res) => {
-    req.session.logged = false;
+    req.session.userId = null;
     res.redirect("/");
 });
 // register
