@@ -66,9 +66,18 @@ app.use("/logout", (req, res) => {
 
 // register
 app.use("/register", _registration_);
-// donate
+
+// donate get
 app.get("/donate", (req, res) => {
     res.render("pages/donate", {title: "Donate"});
+});
+// donate post
+app.post("/donate", (req, res) => {
+    res.render("pages/donate", {
+        title: "Donate",
+        flash: "Cannot Donate: No donation system available",
+        type: "warning"
+    });
 });
 
 // others page

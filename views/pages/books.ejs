@@ -17,9 +17,29 @@
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum, excepturi. Placeat quam praesentium est architecto ad, velit facere libero, consequuntur culpa quo facilis voluptatem illo, pariatur obcaecati eos eveniet amet.
                     <% } %>
                 </p>
-                <p>
-                    <a href="/place?for=<%= book.name %>" class="btn btn-primary">Place Hold</a>
-                </p>
+                <form action="/place" method="post">
+                    <div class="form-group py-1">
+                        <label for="book">Book Name:</label>
+                        <input class="form-control" type="text" readonly name="book" id="book" value="<%= book.name %>">
+                    </div>
+                    <div class="form-group py-1">
+                        <label for="platform">Platform</label>
+                        <select class="form-control" name="platform" required>
+                        <% if (book.library) { %>
+                                <option value="library">Library</option>
+                                <option value="online">Online PDF</option>
+                        </select>
+                        <% } else { %>
+                                <option value="online">Online PDF</option>
+                                <option value="library" disabled>Library</option>
+                        </select>
+                        <small class="form-text text-danger">This book is not available in the library right now.</small>
+                        <% } %>
+                     </div>
+                    <p>
+                        <button type="submit" class="btn btn-outline-primary my-3">Place Hold</button>
+                    </p>
+                </form>
             </div>
         </div>
     </div>
