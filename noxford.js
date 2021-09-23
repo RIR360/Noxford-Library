@@ -12,6 +12,7 @@ const _collection_ = require("./routes/_collection_.js");
 const _books_ = require("./routes/_books_.js");
 const _place_ = require("./routes/_place_.js");
 const _account_ = require("./routes/_account_.js");
+const _search_ = require("./routes/_search_.js");
 
 // app
 const app = express();
@@ -49,9 +50,7 @@ app.get("/getcard", (req, res) => {
     res.render("pages/getcard", {title: "Get a card"});
 });
 // search
-app.get("/search", (req, res) => {
-    res.render("pages/search", {title: "Search"});
-});
+app.use("/search", _search_);
 
 // account page
 app.use("/account", _account_);
