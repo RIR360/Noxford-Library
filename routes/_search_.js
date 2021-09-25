@@ -15,14 +15,14 @@ app.get("/",(req, res) => {
     res.render("pages/search", {title: "Search", data: null});
 });
 // search result page
-app.post("/", async (req, res) => {
+app.get("/result", async (req, res) => {
     try {
         var sort_method;
-        if (req.body.sort == "name")
+        if (req.query.method == "name")
             sort_method = {name: 1};
-        else if (req.body.sort == "pub")
+        else if (req.query.method == "pub")
             sort_method = {pub: 1};
-        else if (req.body.sort == "stars")
+        else if (req.query.method == "stars")
             sort_method = {stars: 1};
         // search database
         MongoClient.connect(uri, (err, response) => {
@@ -30,11 +30,11 @@ app.post("/", async (req, res) => {
             response
             .db("Noxford-library")
             .collection("books")
-            .find({name: {$regex : sanitize(req.body.search), '$options': 'i'}})
+            .find({name: {$regex : sanitize(req.query.text), '$options': 'i'}})
             .sort(sort_method)
             .toArray((err, result) => {
                 if (err) throw err;
-                res.render("pages/search", {title: "Search", data: result});
+                res.send(result);
                 response.close();
             });
         });
