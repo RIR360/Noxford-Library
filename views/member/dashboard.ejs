@@ -1,6 +1,26 @@
 <div class="container-fluid">
     <div class="container py-5">
-        <h1>Your Books</h1>
-        <h1>Updates</h1>
-    </div>
+        <h1 class="fw-bold mb-5">Your Books</h1>
+        <% for(let i = 0; i < data.length; i++) { %>
+            <div class="container row bg-light mb-3 py-3">
+                <div class="col-sm-6">
+                    <a href="books?name=<%= data[i].book %>">
+                        <h3><%= data[i].book %></h3>
+                    </a>
+                    <strong>Available: </strong>
+                    <%= data[i].platform %><br/>
+                    <strong>Placed hold: </strong>
+                    <%= data[i].time %><br/>
+                    <% if (data[i].picked) { %>
+                        <small class="text-danger">No library available to pick up.</small>
+                    <% } else { %>
+                        <small class="text-danger">You've haven't picked it up</small>
+                    <% }%>
+                </div>
+                <div class="col-sm-6">
+                    <a href="/place/release?id=<%= data[i].holding %>" class="btn btn-secondary m-1">Release Hold</a>
+                </div>
+            </div>
+        <% } %>
+    </div> 
 </div>

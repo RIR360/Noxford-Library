@@ -32,11 +32,7 @@ app.post("/", async (req, res) => {
             .collection("holdings")
             .insertOne(placeData);
             // holding placement done
-            res.render("member/dashboard", {
-                title:"Dashboard", 
-                flash: "Placement Success",
-                type: "success"
-            });
+            res.redirect("/");
         } catch (err) {
             Helper.error(res, err);
         } finally {
@@ -50,6 +46,20 @@ app.post("/", async (req, res) => {
             type: "danger"
         });
     }
+});
+
+app.get("/release", async (req, res) => {
+    // connect database
+    await client.connect();
+    // delete data from holding
+    await client
+    .db("Noxford-library")
+    .collection("holdings")
+    .deleteOne({ holding: req.query.id });
+    // close connection
+    await client.close();
+    // redirect to dashboard
+    res.redirect("/");
 });
 
 module.exports = app;

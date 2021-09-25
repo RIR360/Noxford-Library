@@ -4,8 +4,7 @@ const app = express.Router();
 const Helper = require("../helpers");
 // mongodb
 const {MongoClient} = require("mongodb");
-const uri = process.env.DATABASE_URL
-//const client = new MongoClient(uri);
+const uri = process.env.DATABASE_URL;
 // get method
 app.get("/", async (req, res) => { 
     try {

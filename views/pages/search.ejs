@@ -10,10 +10,12 @@
                     <button type="submit" class="btn btn-primary">Search</button>
                 </div>
                 <div class="form-group py-1">
-                    <label for="library" class="btn btn-outline-primary me-2">
-                        <input type="checkbox" name="library" id="library">
-                        In the Library
-                    </label>
+                    <label for="sort">Sort by</label>
+                    <select class="" name="sort" required>
+                            <option value="name">Name</option>
+                            <option value="pub">Date</option>
+                            <option value="stars">Rating</option>
+                    </select>
                 </div>
             </form>
         </div>

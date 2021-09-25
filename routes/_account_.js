@@ -17,8 +17,19 @@ app.get("/", async (req, res) => {
         .findOne({
             "userId": req.session.userId
         });
-
-        res.render("member/account", {title: "Account", user: result});
+        // find stats
+        const books_count = await client
+        .db("Noxford-library")
+        .collection("holdings")
+        .count({user: req.session.userId});
+        // render account page
+        res.render("member/account", {
+            title: "Account", 
+            user: result, 
+            books: books_count
+        });
+        // close connection
+        await client.close();
     } else {
         res.redirect("/login");
     }
