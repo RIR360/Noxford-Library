@@ -79,8 +79,8 @@ app.post("/", async (req, res) => {
                 .insertOne(userData);
                 // registration done
                 req.session.userId = "user" + idText;
-                res.render("pages/home", {
-                    title:"Home", 
+                res.render("pages/dashbaord", {
+                    title:"Dashboard", 
                     flash: "Registration Success",
                     type: "success"
                 });

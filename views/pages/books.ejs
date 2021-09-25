@@ -1,8 +1,11 @@
 <div class="container-fluid">
-    <div class="container py-5">
+    <div class="container py-3">
+        <p>
+            <a href="/collection">Back to collections</a>
+        </p>
         <div class="row">
             <div class="col-sm text-center mb-5 mb-sm-0 bg-light py-5">
-                <img src="<%= book.cover %>" alt="<%= book.name %>'s Cover Photo.">
+                <img class="rounded img-fluid" src="<%= book.cover %>" alt="<%= book.name %>'s Cover Photo.">
             </div>
             <div class="col-sm-4 px-4">
                 <h1 class="py-2 fw-bold"><%= book.name %></h1>

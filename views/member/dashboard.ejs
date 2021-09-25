@@ -1,6 +1,9 @@
 <div class="container-fluid">
     <div class="container py-5">
         <h1 class="fw-bold mb-5">Your Books</h1>
+        <% if(data.length < 1) { %>
+            <p class="text-danger">You haven't placed for any book yet. see collection</p>
+        <% } %>
         <% for(let i = 0; i < data.length; i++) { %>
             <div class="container row bg-light mb-3 py-3">
                 <div class="col-sm-6">
@@ -22,5 +25,15 @@
                 </div>
             </div>
         <% } %>
-    </div> 
+    </div>
+    <div class="container-fluid py-5 px-0">
+        <div class="container text-center">
+            <h1 class="display-2">Find the perfect one.</h1>
+            <p class="col-md-6 container fs-4">You can find a lot of noteworthy books in our collection. Browse through them to find out the perfect for you to read.</p>
+            <div class="my-4 container">
+                <img class="img-fluid rounded shadow" src="img/book collection.jpg" alt="">
+            </div>
+            <a href="/collection" class="fs-5 btn btn-primary">See Collection</a>
+        </div>
+    </div>
 </div>
