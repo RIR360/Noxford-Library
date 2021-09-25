@@ -41,6 +41,7 @@ h1, h2, h3, h4, h5, h6, .btn {
     border: 2px solid var(--bs-primary);
 }.header_bg {
     background: url("../img/home-bg.jpg");
+    background-attachment: fixed;
     box-shadow:inset 0 0 0 2000px rgba(1, 29, 61, 0.4);
 }
 .book_card {
