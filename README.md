@@ -1,11 +1,10 @@
 ![featured--picture-low](https://user-images.githubusercontent.com/50569315/135026949-7fedee51-0827-4fe4-a764-8b974dd9a9fd.jpg)
 
 # Noxford Library
-It is a full-stack website for a library. Here you can place a hold for a book, see book information, search for books. Although you can't read any book, it shows you how can nicely build a system like this.
-
+It is a full-stack website for a library. Here you can place a hold for a book, see book information, search for books. Although you can't read any book, it shows you how can nicely build a system like this.<br/>
 A user can also register and login into the website to keep track of the books. Further details are given below.
 
-Visit the site: 
+Visit the site: [Noxford Library](http://rir-noxford-library.herokuapp.com/)
 
 ## Technologies
 ### Frontend
@@ -21,12 +20,19 @@ Visit the site:
 * Bcrypt
 ### Database
 * MongoDb Atlas
+### Hosting
+* Heroku
 
 ## Login/Register
 **Login:** Login system is supported by Express Session. That uses cookie to remember a login session.<br/>
 **Register:** Register form is fully functional and supported by HTML Form and JavaScript. However, if anyone manage to pass any unacceptable input, it will be rejected by the server.
 
 ![login-register](https://user-images.githubusercontent.com/50569315/135061176-c62b9b41-0775-4741-92db-495e63a9177c.jpg)
+
+## Encryption
+For security measures, I've used Bcrypt to hash and protect the passwords. Bcrypt is a password-hashing function designed by Niels Provos and David Mazières, based on the Blowfish cipher and presented at USENIX in 1999.
+
+![image](https://user-images.githubusercontent.com/50569315/135064755-4608e3cb-9354-4f68-9ab3-92ca5c531d31.png)
 
 ## Dashboard
 Dashboard keeps track of the books that a user have placed hold on. Anyone can place hold for any book by loggin into the site.
