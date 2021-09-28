@@ -20,41 +20,40 @@ app.post("/", async (req, res) => {
     const email = req.body.email;
     const pwd = req.body.password;
     const c_pwd = req.body.confirm;
-    // connect to database
-    await client.connect();
-    // find the user 
-    const result = await client
-    .db("Noxford-library")
-    .collection("users")
-    .findOne({
-        "email": email
-    });
-    // check for users
-    if (result) {
-        res.render("member/register", {
-            title:"Register Failed", 
-            flash: "Register failed: User already exists",
-            type: "danger"
+    try {
+        // connect to database
+        await client.connect();
+        // find the user 
+        const result = await client
+        .db("Noxford-library")
+        .collection("users")
+        .findOne({
+            "email": email
         });
-    } else {
-        // validation check
-        if (!fname || !email || !pwd) {
-            Helper.error(res);
-        }
-        else if (fname.length > 45) {
-            Helper.error(res, "Full name too long");
-        }
-        else if (pwd != c_pwd) {
-            Helper.error(res, "Password Did not match");
-        }
-        else if (pwd.length < 8 || pwd.length > 40)
-        {
-            Helper.error(res, "Password too small or big");
-        }
-        else {
-            // register the user
-            // try inserting the user data
-            try {
+        // check for users
+        if (result) {
+            res.render("member/register", {
+                title:"Register Failed", 
+                flash: "Register failed: User already exists",
+                type: "danger"
+            });
+        } else {
+            // validation check
+            if (!fname || !email || !pwd) {
+                Helper.error(res);
+            }
+            else if (fname.length > 45) {
+                Helper.error(res, "Full name too long");
+            }
+            else if (pwd != c_pwd) {
+                Helper.error(res, "Password Did not match");
+            }
+            else if (pwd.length < 8 || pwd.length > 40)
+            {
+                Helper.error(res, "Password too small or big");
+            }
+            else {
+                // register the user
                 // encrypting password
                 const pass = bcrypt.hash(
                     req.body.password,
@@ -79,18 +78,13 @@ app.post("/", async (req, res) => {
                 .insertOne(userData);
                 // registration done
                 req.session.userId = "user" + idText;
-                res.render("pages/dashbaord", {
-                    title:"Dashboard", 
-                    flash: "Registration Success",
-                    type: "success"
-                });
-            } catch (err) {
-                Helper.error(res, err);
-            } finally {
-                // close the mongo client here
-                await client.close();
+                res.redirect("/");
             }
         }
+    } catch (err) {
+        Helper.error(res, err);
+    } finally {
+        await client.close();
     }
 });
 
