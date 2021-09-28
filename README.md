@@ -35,7 +35,7 @@ For security measures, I've used Bcrypt to hash and protect the passwords. Bcryp
 ![image](https://user-images.githubusercontent.com/50569315/135064755-4608e3cb-9354-4f68-9ab3-92ca5c531d31.png)
 
 ## Dashboard
-Dashboard keeps track of the books that a user have placed hold on. Anyone can place hold for any book by loggin into the site.
+Dashboard keeps track of the books that a user have placed hold on. Anyone can place hold for any book by logging into the site.
 
 ![dashboard](https://user-images.githubusercontent.com/50569315/135064027-941163b8-81b4-4bdf-a93d-f455b53d7d0f.jpg)
 
