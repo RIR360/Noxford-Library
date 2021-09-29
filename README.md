@@ -40,7 +40,7 @@ Dashboard keeps track of the books that a user have placed hold on. Anyone can p
 ![dashboard](https://user-images.githubusercontent.com/50569315/135064027-941163b8-81b4-4bdf-a93d-f455b53d7d0f.jpg)
 
 ## Search
-Search page uses AJAX to show results dynamically. User can search for a keyboard and apply filters on the results. User input always gets sanitized before a search operation execute.
+Search page uses AJAX to show results dynamically. User can search for a keyword and apply filters on the results. User input always gets sanitized before a search operation execute.
 
 ![search](https://user-images.githubusercontent.com/50569315/135061216-fc1ca333-510f-4f0c-a462-90d34e3f3211.jpg)
 
