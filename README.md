@@ -4,7 +4,8 @@
 It is a full-stack website for a library. Here you can place a hold for a book, see book information, search for books. Although you can't read any book, it shows you how can nicely build a system like this.<br/>
 A user can also register and login into the website to keep track of the books. Further details are given below.
 
-Visit the site: [Noxford Library](http://rir-noxford-library.herokuapp.com/)
+Visit the site: [Noxford Library Live](http://rir-noxford-library.herokuapp.com/) <br/>
+Watch the video: [Noxford Library on Youtube](https://youtu.be/KwtOZKcUZ3s)
 
 ## Technologies
 ### Frontend
