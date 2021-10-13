@@ -79,6 +79,7 @@ app.post("/", async (req, res) => {
                 // registration done
                 req.session.userId = "user" + idText;
                 res.redirect("/");
+
             }
         }
     } catch (err) {
